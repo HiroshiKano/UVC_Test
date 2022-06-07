@@ -460,7 +460,7 @@ async function videoStart()
 
 	try {
 		videoStream = await navigator.mediaDevices.getUserMedia({
-			video: { width:srcWidth, height:srcHeight },
+			video: { width:{min:srcWidth,max:srcWidth}, height:{min:srcHeight,max:srcHeight}},
 			audio: true});
 	} catch(e) {
 		console.log(e);
@@ -469,7 +469,7 @@ async function videoStart()
 
 	let devices = await navigator.mediaDevices.enumerateDevices();
 	devices.forEach(function(device) {
-		console.log(device.kind + ":" + device.label + " id=" + device.deviceId + " id=" + device.groupId + "\n");
+		console.log(device.kind + ":" + device.label + " DevId=" + device.deviceId + " GrpId=" + device.groupId + "\n");
 	});
 
 	video.srcObject = videoStream;
