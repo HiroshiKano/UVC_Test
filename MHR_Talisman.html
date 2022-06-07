@@ -469,7 +469,7 @@ async function videoStart()
 
 	let devices = await navigator.mediaDevices.enumerateDevices();
 	devices.forEach(function(device) {
-		console.log(device.kind + ":" + device.label + " id=" + device.deviceId + " id=" + device.groupId + "\n");
+		console.log(device.kind + ":" + device.label + " devId=" + device.deviceId + " grpId=" + device.groupId + "\n");
 	});
 
 	video.srcObject = videoStream;
